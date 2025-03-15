@@ -1,28 +1,60 @@
 {
-  "name": "non-monorepo",
-  "version": "0.1.0",
+  "name": "@slurpyb/storybook-solidjs-panda",
+  "version": "0.1.1",
   "private": true,
-  "packageManager": "pnpm@8.14.0",
+  "type": "module",
+  "packageManager": "pnpm@10.5.2",
+  "author": "Jordan Sweeting <slurpyb@fastmail.com>",
+  "description": "Starting point Storybook + SolidJS + Panda CSS + Vite",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slurpyb/storybook-solidjs-panda.git"
+  },
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "check-types": "tsc --noEmit",
-    "lint": "next lint"
+    "clean": "rm -rf node_modules && rm -rf dist",
+    "prepare": "panda codegen --silent",
+    "dev": "pnpm run storybook",
+    "lint": "pnpm run format-and-lint",
+    "lint:fix": "pnpm run format-and-lint:fix",
+    "storybook": "storybook dev -p 6006",
+    "typecheck": "tsc",
+    "build": "pnpm run prepare && pnpm run build-storybook",
+    "build-storybook": "storybook build",
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write"
   },
   "dependencies": {
-    "next": "15.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "turb": "^0.1.2"
+    "@pandacss/dev": "^0.53.1",
+    "@pandacss/types": "^0.53.1",
+    "solid-icons": "1.1.0",
+    "solid-js": "1.9.3",
+    "typescript": "5.7.2",
+    "vite": "6.0.1",
+    "vite-plugin-solid": "2.11.0",
+    "vite-tsconfig-paths": "5.1.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.1",
-    "typescript": "^5"
+    "@biomejs/biome": "^1.9.4",
+    "@chromatic-com/storybook": "^3",
+    "@pandacss/preset-panda": "^0.53.1",
+    "@slurpyb/lucide-solid-rebundler": "^1.0.0",
+    "@storybook/addon-a11y": "^8.6.5",
+    "@storybook/addon-controls": "^8.6.6",
+    "@storybook/addon-essentials": "^8.6.5",
+    "@storybook/addon-interactions": "^8.6.5",
+    "@storybook/addon-themes": "^8.6.5",
+    "@storybook/blocks": "^8.6.5",
+    "@storybook/docs-tools": "^8.6.5",
+    "@storybook/react": "^8.6.5",
+    "@storybook/test": "^8.6.5",
+    "lucide-solid": "^0.482.0",
+    "storybook": "^8.6.5",
+    "storybook-solidjs": "^1.0.0-beta.6",
+    "storybook-solidjs-vite": "^1.0.0-beta.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "@storybook/builder-vite": "~8.4.6"
+    }
   }
 }
