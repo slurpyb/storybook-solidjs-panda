@@ -1,4 +1,4 @@
-# Solid Design System
+# Storybook + SolidJS + PandaCSS + Vite
 
 A starting point for creating a design system with storybook, solidjs, pandacss, and vite.
 
@@ -59,10 +59,10 @@ pnpm build
 ```
 
 **Note**:
-This repo uses (@slurpyb/lucide-solid-rebundler)[https://github.com/slurpyb/lucide-solid-rebundler] to fix issue with lucide-icons. Remove this and the lucide-solid icons if you dont need it.
+This repo uses [@slurpyb/lucide-solid-rebundler](https://github.com/slurpyb/lucide-solid-rebundler) to fix issue with lucide-icons. Remove this and the lucide-solid icons if you dont need it.
 
 ## Acknowledgements
-- (Park-UI)[https://park-ui.com] for creating a storybook+vite+solidjs+pandacss project which actually worked. For whatever reason, I struggled to get this stack running. I learnt a lot through the park-ui design system repo.
+- [Park-UI](https://park-ui.com) for creating a storybook+vite+solidjs+pandacss project which actually worked. For whatever reason, I struggled to get this stack running. I learnt a lot through the park-ui design system repo.
 
 ## Contributions
 Feel free to open a pull request. This was a very hacky process.
